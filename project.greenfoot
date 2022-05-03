@@ -1,11 +1,14 @@
 #Greenfoot project file
 class.Dolphin.image=dolphin.png
+dependency1.from=MyWorld
+dependency1.to=Dolphin
+dependency1.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
 editor.fx.0.x=360
 editor.fx.0.y=26
 height=551
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=UTF-8
 publish.hasSource=false
