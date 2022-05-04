@@ -7,17 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Dolphin extends Actor
-{
-    /**
-     * Act - do whatever the Dolphin wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public Dolphin() {
-        
+{        
+    public void act()
+    {               
+        checkMovement();
+        checkTouching();
     }
     
-    public void act()
-    {
+    public void checkMovement() {
         if (Greenfoot.isKeyDown("a")) {
             move(-1);
         }
@@ -29,6 +26,14 @@ public class Dolphin extends Actor
         }
         else if (Greenfoot.isKeyDown("s")) {
             setLocation(getX(), getY() + 1);
+        }
+    }
+    
+    public void checkTouching() {
+        if (isTouching(Bread.class)) {
+            removeTouching(Bread.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnBread();
         }
     }
 }
