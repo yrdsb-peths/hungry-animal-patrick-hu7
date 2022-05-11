@@ -34,6 +34,7 @@ public class Dolphin extends Actor
             removeTouching(Bread.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnBread();
+            world.updateLabel();
         }
     }
 }
