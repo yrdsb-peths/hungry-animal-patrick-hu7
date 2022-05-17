@@ -8,10 +8,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dolphin extends Actor
 {        
+    GreenfootSound dolphinSound = new GreenfootSound("crunch.mp3");
+    GreenfootImage idle = new GreenfootImage("./dino-animation/dino0.png");
+    GreenfootImage[] animation = new GreenfootImage[6];
+    private int animation_index = 0;
+    
+    public Dolphin() {
+        setImage(idle);
+        // store the sprite animation
+        for (int i = 0; i < 6; i++) {
+            GreenfootImage img = new GreenfootImage("./dino-animation/dino" + i + ".png");
+            animation[i] = img;
+        }
+    }
+        
     public void act()
-    {               
+    {           
         checkMovement();
         checkTouching();
+        animate();
+    }
+    
+    public void animate() {
+        setImage(animation[animation_index]);
+        animation_index++;
+        animation_index %= 5;
     }
     
     public void checkMovement() {
@@ -35,6 +56,7 @@ public class Dolphin extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnBread();
             world.updateLabel();
+            dolphinSound.play();
         }
     }
 }
