@@ -38,7 +38,7 @@ public class Dolphin extends Actor
     }
     
     public void animate() {
-        if (animTimer.millisElapsed() > 500) {
+        if (animTimer.millisElapsed() > 0) {
             if (facingRight) {
                 setImage(rightImages[animation_index]);
             }

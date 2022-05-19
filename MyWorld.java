@@ -11,7 +11,7 @@ public class MyWorld extends World
     Dolphin d = new Dolphin();
     Bread b = new Bread();
     Label scoreLabel = new Label (0, 40);
-    public int score = 0;
+    public static int score = 0;
     
     public MyWorld()
     {    
@@ -35,7 +35,7 @@ public class MyWorld extends World
     }
     
     public void gameOver() {
-        Label gameOver = new Label("Game Over!", 100);
-        addObject(gameOver, 300, 200);
+        GameOverWorld gameOverWorld = new GameOverWorld();
+        Greenfoot.setWorld(gameOverWorld);
     }
 }
