@@ -1,23 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Dolphin here.
+ * Main animal.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Patrick Hu
+ * @version May 20
  */
-public class Dolphin extends Actor
+public class Dino extends Actor
 {        
-    GreenfootSound dolphinSound = new GreenfootSound("crunch.mp3");
+    GreenfootSound dinoSound = new GreenfootSound("crunch.mp3");
     GreenfootImage idle = new GreenfootImage("./dino-animation/dino0.png");
     GreenfootImage[] rightImages = new GreenfootImage[6];
     GreenfootImage[] leftImages = new GreenfootImage[6];
-
-    private int animation_index = 0;
     SimpleTimer animTimer = new SimpleTimer();
-    private boolean facingRight = true;
     
-    public Dolphin() {
+    private int animation_index = 0;
+    private boolean facingRight = true;
+    private int speed = 2;
+    
+    public Dino() {
         setImage(idle);
         // store the sprite animation
         for (int i = 0; i < 6; i++) {
@@ -53,18 +54,18 @@ public class Dolphin extends Actor
     
     public void checkMovement() {
         if (Greenfoot.isKeyDown("a")) {
-            move(-1);
+            move(0 - speed);
             facingRight = false;
         }
         else if (Greenfoot.isKeyDown("d")) {
-            move(1);
+            move(speed);
             facingRight = true;
         }
         else if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY() - 1);
+            setLocation(getX(), getY() - speed);
         }
         else if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY() + 1);
+            setLocation(getX(), getY() + speed);
         }
     }
     
@@ -73,8 +74,8 @@ public class Dolphin extends Actor
             removeTouching(Bread.class);
             MyWorld world = (MyWorld) getWorld();
             world.spawnBread();
-            world.updateLabel();
-            dolphinSound.play();
+            world.increaseScore();
+            dinoSound.play();
         }
     }
 }

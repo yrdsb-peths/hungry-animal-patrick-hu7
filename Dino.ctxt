@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Dolphin
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Dolphin\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.target=Dino
+comment0.text=\r\n\ Main\ animal.\r\n\ \r\n\ @author\ Patrick\ Hu\r\n\ @version\ May\ 20\r\n
 comment1.params=
-comment1.target=Dolphin()
+comment1.target=Dino()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=

@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Bread
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Apple\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Bread.\r\n\ \r\n\ @author\ Patrick\ Hu\ \r\n\ @version\ May\ 20\r\n
 comment1.params=
 comment1.target=void\ act()
-comment2.params=
-comment2.target=void\ checkGameOver()
-numComments=3
+comment2.params=speed
+comment2.target=void\ setSpeed(int)
+comment3.params=
+comment3.target=void\ checkGameOver()
+numComments=4
